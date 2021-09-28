@@ -1,4 +1,23 @@
-## RT3
+# RT3
+
+## New part
+
+#### step1: Get pre-compressed model 
+
+```bash
+cd LeNet-5-MNIST-PyTorch  
+python3 train.py  
+```
+Model will be put to "LeNet5-MNIST-PyTorch/models" (LeNet-5 / MNIST unpruned)
+
+#### step2: start from rl_controller.py
+
+```bash
+cd RL
+python3 mnist_rl_controller.py
+```
+
+## old part
 #### step1: Download the pre-compressed model
 
  - BaiDu NetDisk link:  https://pan.baidu.com/s/1OIV08F4tUqyFD1DGfbkJ5g 
