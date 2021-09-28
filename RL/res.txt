@@ -1,0 +1,2107 @@
+#########################################################################################
+A.pattern pruning from precompression model
+B.extract important pattern from precompression model
+C.training(pruning number=[10, 30, 50, 70, 80, 90])
+#########################################################################################
+2021-09-28 15:38:06,461 tensorflow   WARNING  
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+2021-09-28 15:38:08,300 tensorflow   WARNING  From mnist_rl_controller.py:126: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2021-09-28 15:38:08,394 tensorflow   WARNING  From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/contrib/rnn/python/ops/rnn_cell.py:1529: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+2021-09-28 15:38:08,486 tensorflow   WARNING  From mnist_rl_controller.py:131: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2021-09-28 15:38:08,487 tensorflow   WARNING  From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2021-09-28 15:38:15,293 tensorflow   WARNING  From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/python/training/rmsprop.py:119: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+[at weight fc1.weight]
+percentage of pruned: 0.0000%
+nonzero parameters after pruning: 30720 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 0.0000%
+nonzero parameters after pruning: 10080 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 0.0000%
+nonzero parameters after pruning: 840 / 840
+
+total pruning rate: 44426 / 44426 (0.0000%)
+-----------------------------------------------------------------------------------------
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 0<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 10.0586%
+nonzero parameters after pruning: 27630 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7222%
+nonzero parameters after pruning: 9100 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40273 / 44426 (9.3481%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9154%
+nonzero parameters after pruning: 15386 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 50.0595%
+nonzero parameters after pruning: 5034 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 50.0000%
+nonzero parameters after pruning: 420 / 840
+
+total pruning rate: 23626 / 44426 (46.8194%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9414%
+nonzero parameters after pruning: 6162 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.9008%
+nonzero parameters after pruning: 2026 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11143 / 44426 (74.9178%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.184474964285712, 18.0028425, 8.9540368125]
+runs_number: [3786981.0, 5540562.0, 10714006.0]
+====================Results=======================
+--------->Episode: 0,sparsity_level:[0, 2, 4]
+--------->Accuracy reward: -1,time reward:8.064340454545453
+--------->Reward: 7.064340454545453
+==========================================================================================
+=-=-=-=-=-=>Episode: 0 | Loss: [1.6197493] | LR: (0.99, 1) | Mean R: 7.064340454545453 | Reward: [0.0]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 1<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9414%
+nonzero parameters after pruning: 27666 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.0397%
+nonzero parameters after pruning: 9068 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40274 / 44426 (9.3459%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9544%
+nonzero parameters after pruning: 15374 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.8611%
+nonzero parameters after pruning: 5054 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23636 / 44426 (46.7969%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9544%
+nonzero parameters after pruning: 6158 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.2282%
+nonzero parameters after pruning: 1993 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11106 / 44426 (75.0011%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.185095214285713, 18.011526000000003, 8.913875625]
+runs_number: [3786879.0, 5537891.0, 10762278.0]
+====================Results=======================
+--------->Episode: 1,sparsity_level:[0, 2, 4]
+--------->Accuracy reward: -1,time reward:8.085021818181819
+--------->Reward: 7.0850218181818185
+==========================================================================================
+=-=-=-=-=-=>Episode: 1 | Loss: [1.6213344] | LR: (0.99, 2) | Mean R: 7.0850218181818185 | Reward: [0.015119288304132006]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 2<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 29.9642%
+nonzero parameters after pruning: 21515 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9901%
+nonzero parameters after pruning: 7057 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31947 / 44426 (28.0894%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9544%
+nonzero parameters after pruning: 15374 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 50.1587%
+nonzero parameters after pruning: 5024 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23606 / 44426 (46.8644%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 70.0228%
+nonzero parameters after pruning: 9209 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 70.0595%
+nonzero parameters after pruning: 3018 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15265 / 44426 (65.6395%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.020273464285715, 17.9854755, 13.4282101875]
+runs_number: [4872243.0, 5545912.0, 7144184.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9008
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.7481
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.4311
+| test before training | weighted_accuracy   0.7610
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 38.90 ms/batch  | loss  0.15
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9826
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9781
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9748
+| end of epoch   1 | time: 45.71s | weighted_accuracy   0.9797
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9826
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9781
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9748
+| end of training | weighted_accuracy   0.9797
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 2,sparsity_level:[1, 2, 3]
+--------->Accuracy reward: 0.8854439523484973,time reward:6.937426818181818
+--------->Reward: 7.822870770530315
+==========================================================================================
+=-=-=-=-=-=>Episode: 2 | Loss: [1.612473] | LR: (0.99, 3) | Mean R: 7.822870770530315 | Reward: [0.6108448935107447]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 3<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9772%
+nonzero parameters after pruning: 27655 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7718%
+nonzero parameters after pruning: 9095 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40290 / 44426 (9.3099%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 29.9316%
+nonzero parameters after pruning: 21525 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9008%
+nonzero parameters after pruning: 7066 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 30.0000%
+nonzero parameters after pruning: 588 / 840
+
+total pruning rate: 31965 / 44426 (28.0489%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9154%
+nonzero parameters after pruning: 15386 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9405%
+nonzero parameters after pruning: 5046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23640 / 44426 (46.7879%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.195019214285715, 25.24401315, 22.51874925]
+runs_number: [3785259.0, 3951268.0, 4260165.0]
+====================Results=======================
+--------->Episode: 3,sparsity_level:[0, 1, 2]
+--------->Accuracy reward: -1,time reward:4.407587272727272
+--------->Reward: 3.4075872727272722
+==========================================================================================
+=-=-=-=-=-=>Episode: 3 | Loss: [1.6202108] | LR: (0.99, 4) | Mean R: 3.4075872727272722 | Reward: [-3.2945340242322025]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 4<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9772%
+nonzero parameters after pruning: 27655 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.0397%
+nonzero parameters after pruning: 9068 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40263 / 44426 (9.3706%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 30.0065%
+nonzero parameters after pruning: 21502 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9206%
+nonzero parameters after pruning: 7064 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31941 / 44426 (28.1029%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9805%
+nonzero parameters after pruning: 6150 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.8909%
+nonzero parameters after pruning: 2027 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11132 / 44426 (74.9426%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.178272464285712, 25.223172750000003, 8.942097]
+runs_number: [3787994.0, 3954533.0, 10728312.0]
+====================Results=======================
+--------->Episode: 4,sparsity_level:[0, 1, 4]
+--------->Accuracy reward: -1,time reward:7.350381363636363
+--------->Reward: 6.350381363636363
+==========================================================================================
+=-=-=-=-=-=>Episode: 4 | Loss: [1.6223122] | LR: (0.99, 5) | Mean R: 6.350381363636363 | Reward: [-0.24464770693185312]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 5<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9772%
+nonzero parameters after pruning: 27655 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.0397%
+nonzero parameters after pruning: 9068 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40266 / 44426 (9.3639%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9544%
+nonzero parameters after pruning: 15374 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 50.0595%
+nonzero parameters after pruning: 5034 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 50.0000%
+nonzero parameters after pruning: 420 / 840
+
+total pruning rate: 23614 / 44426 (46.8464%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 70.0228%
+nonzero parameters after pruning: 9209 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.7917%
+nonzero parameters after pruning: 3045 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15292 / 44426 (65.5787%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.180133214285714, 17.9924223, 13.457517]
+runs_number: [3787690.0, 5543771.0, 7128626.0]
+====================Results=======================
+--------->Episode: 5,sparsity_level:[0, 2, 3]
+--------->Accuracy reward: -1,time reward:6.436403181818181
+--------->Reward: 5.436403181818181
+==========================================================================================
+=-=-=-=-=-=>Episode: 5 | Loss: [1.61658] | LR: (0.99, 6) | Mean R: 5.436403181818181 | Reward: [-1.0050783412076676]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 6<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9479%
+nonzero parameters after pruning: 27664 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.1190%
+nonzero parameters after pruning: 9060 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40264 / 44426 (9.3684%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9349%
+nonzero parameters after pruning: 15380 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 50.1190%
+nonzero parameters after pruning: 5028 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23616 / 44426 (46.8419%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9837%
+nonzero parameters after pruning: 6149 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.2282%
+nonzero parameters after pruning: 1993 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11097 / 44426 (75.0214%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.17889271428571, 17.994159000000003, 8.9041066875]
+runs_number: [3787893.0, 5543236.0, 10774085.0]
+====================Results=======================
+--------->Episode: 6,sparsity_level:[0, 2, 4]
+--------->Accuracy reward: -1,time reward:8.09327909090909
+--------->Reward: 7.093279090909091
+==========================================================================================
+=-=-=-=-=-=>Episode: 6 | Loss: [1.6296229] | LR: (0.99, 7) | Mean R: 7.093279090909091 | Reward: [0.6354183231024253]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 7<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 10.0586%
+nonzero parameters after pruning: 27630 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7718%
+nonzero parameters after pruning: 9095 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40265 / 44426 (9.3661%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 30.0033%
+nonzero parameters after pruning: 21503 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9008%
+nonzero parameters after pruning: 7066 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31944 / 44426 (28.0962%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9512%
+nonzero parameters after pruning: 6159 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.9306%
+nonzero parameters after pruning: 2023 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11137 / 44426 (74.9313%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.179512964285713, 25.2257778, 8.9475241875]
+runs_number: [3787791.0, 3954125.0, 10721804.0]
+====================Results=======================
+--------->Episode: 7,sparsity_level:[0, 1, 4]
+--------->Accuracy reward: -1,time reward:7.347145454545454
+--------->Reward: 6.347145454545454
+==========================================================================================
+=-=-=-=-=-=>Episode: 7 | Loss: [1.6246964] | LR: (0.99, 8) | Mean R: 6.347145454545454 | Reward: [-0.08277352598935472]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 8<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9577%
+nonzero parameters after pruning: 27661 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7222%
+nonzero parameters after pruning: 9100 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40304 / 44426 (9.2784%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 50.0130%
+nonzero parameters after pruning: 15356 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 50.1091%
+nonzero parameters after pruning: 5029 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 50.0000%
+nonzero parameters after pruning: 420 / 840
+
+total pruning rate: 23591 / 44426 (46.8982%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9837%
+nonzero parameters after pruning: 6149 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 2028 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11132 / 44426 (74.9426%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.20370271428571, 17.97245025, 8.942097]
+runs_number: [3783842.0, 5549932.0, 10728312.0]
+====================Results=======================
+--------->Episode: 8,sparsity_level:[0, 2, 4]
+--------->Accuracy reward: -1,time reward:8.073675454545453
+--------->Reward: 7.073675454545453
+==========================================================================================
+=-=-=-=-=-=>Episode: 8 | Loss: [1.620828] | LR: (0.99, 9) | Mean R: 7.073675454545453 | Reward: [0.6166490556308108]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 9<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9707%
+nonzero parameters after pruning: 27657 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7222%
+nonzero parameters after pruning: 9100 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40297 / 44426 (9.2941%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 29.9772%
+nonzero parameters after pruning: 21511 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9206%
+nonzero parameters after pruning: 7064 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31950 / 44426 (28.0827%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9089%
+nonzero parameters after pruning: 9244 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.7817%
+nonzero parameters after pruning: 3046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.2381%
+nonzero parameters after pruning: 250 / 840
+
+total pruning rate: 15326 / 44426 (65.5022%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.199360964285717, 25.230987900000002, 13.494421875]
+runs_number: [3784551.0, 3953308.0, 7109130.0]
+====================Results=======================
+--------->Episode: 9,sparsity_level:[0, 1, 3]
+--------->Accuracy reward: -1,time reward:5.703176818181817
+--------->Reward: 4.703176818181817
+==========================================================================================
+=-=-=-=-=-=>Episode: 9 | Loss: [1.6146518] | LR: (0.99, 10) | Mean R: 4.703176818181817 | Reward: [-1.6454380173356649]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 10<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 49.9870%
+nonzero parameters after pruning: 15364 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9008%
+nonzero parameters after pruning: 5050 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23622 / 44426 (46.8284%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9023%
+nonzero parameters after pruning: 9246 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.7520%
+nonzero parameters after pruning: 3049 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.2381%
+nonzero parameters after pruning: 250 / 840
+
+total pruning rate: 15331 / 44426 (65.4909%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9154%
+nonzero parameters after pruning: 6170 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.9306%
+nonzero parameters after pruning: 2023 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11148 / 44426 (74.9066%)
+-----------------------------------------------------------------------------------------
+latency_list: [12.856692214285713, 10.79987925, 8.959463999999999]
+runs_number: [6829063.0, 9235832.0, 10707516.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.7612
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.1947
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.3516
+| test before training | weighted_accuracy   0.5093
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 39.45 ms/batch  | loss  0.19
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9746
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9695
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9640
+| end of epoch   1 | time: 45.91s | weighted_accuracy   0.9709
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9746
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9695
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9640
+| end of training | weighted_accuracy   0.9709
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 10,sparsity_level:[2, 3, 4]
+--------->Accuracy reward: 0.7883327537112766,time reward:11.123823181818182
+--------->Reward: 11.912155935529459
+==========================================================================================
+=-=-=-=-=-=>Episode: 10 | Loss: [1.6194044] | LR: (0.99, 11) | Mean R: 11.912155935529459 | Reward: [5.282576936963725]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 11<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9447%
+nonzero parameters after pruning: 27665 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7917%
+nonzero parameters after pruning: 9093 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40301 / 44426 (9.2851%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 70.0260%
+nonzero parameters after pruning: 9208 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.8611%
+nonzero parameters after pruning: 3038 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15286 / 44426 (65.5922%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9837%
+nonzero parameters after pruning: 6149 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.8214%
+nonzero parameters after pruning: 2034 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11138 / 44426 (74.9291%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.201841964285713, 10.7608035, 8.948609625]
+runs_number: [3784146.0, 9269371.0, 10720504.0]
+====================Results=======================
+--------->Episode: 11,sparsity_level:[0, 3, 4]
+--------->Accuracy reward: -1,time reward:9.760918636363636
+--------->Reward: 8.760918636363636
+==========================================================================================
+=-=-=-=-=-=>Episode: 11 | Loss: [1.5952448] | LR: (0.99, 12) | Mean R: 8.760918636363636 | Reward: [2.0217535301866265]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 12<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 29.9479%
+nonzero parameters after pruning: 21520 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.8611%
+nonzero parameters after pruning: 7070 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31965 / 44426 (28.0489%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.8926%
+nonzero parameters after pruning: 9249 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.8611%
+nonzero parameters after pruning: 3038 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15325 / 44426 (65.5044%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9186%
+nonzero parameters after pruning: 6169 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.8611%
+nonzero parameters after pruning: 2030 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11154 / 44426 (74.8931%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.03143796428571, 10.79466915, 8.965976625]
+runs_number: [4869227.0, 9240290.0, 10699738.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.8938
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.3518
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.1572
+| test before training | weighted_accuracy   0.5839
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 38.98 ms/batch  | loss  0.22
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9815
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9742
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9645
+| end of epoch   1 | time: 45.47s | weighted_accuracy   0.9759
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9815
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9742
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9645
+| end of training | weighted_accuracy   0.9759
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 12,sparsity_level:[1, 3, 4]
+--------->Accuracy reward: 0.8434445328182645,time reward:10.231479545454546
+--------->Reward: 11.07492407827281
+==========================================================================================
+=-=-=-=-=-=>Episode: 12 | Loss: [1.6142755] | LR: (0.99, 13) | Mean R: 11.07492407827281 | Reward: [4.131945301594045]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 13<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9447%
+nonzero parameters after pruning: 27665 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7718%
+nonzero parameters after pruning: 9095 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40303 / 44426 (9.2806%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9023%
+nonzero parameters after pruning: 9246 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 70.1786%
+nonzero parameters after pruning: 3006 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15290 / 44426 (65.5832%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9479%
+nonzero parameters after pruning: 6160 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.2282%
+nonzero parameters after pruning: 1993 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11108 / 44426 (74.9966%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.203082464285714, 10.764276900000002, 8.9160465]
+runs_number: [3783944.0, 9266379.0, 10759657.0]
+====================Results=======================
+--------->Episode: 13,sparsity_level:[0, 3, 4]
+--------->Accuracy reward: -1,time reward:9.777263636363635
+--------->Reward: 8.777263636363635
+==========================================================================================
+=-=-=-=-=-=>Episode: 13 | Loss: [1.6017425] | LR: (0.99, 14) | Mean R: 8.777263636363635 | Reward: [1.7405190359236489]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 14<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 49.9935%
+nonzero parameters after pruning: 15362 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 50.0595%
+nonzero parameters after pruning: 5034 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23604 / 44426 (46.8690%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9837%
+nonzero parameters after pruning: 9221 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 70.1786%
+nonzero parameters after pruning: 3006 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15265 / 44426 (65.6395%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9837%
+nonzero parameters after pruning: 6149 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.9306%
+nonzero parameters after pruning: 2023 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11127 / 44426 (74.9539%)
+-----------------------------------------------------------------------------------------
+latency_list: [12.845527714285714, 10.74256815, 8.9366698125]
+runs_number: [6834998.0, 9285105.0, 10734827.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.6094
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.3924
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.4051
+| test before training | weighted_accuracy   0.5034
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 39.23 ms/batch  | loss  0.18
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9753
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9732
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9636
+| end of epoch   1 | time: 45.72s | weighted_accuracy   0.9723
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9753
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9732
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9636
+| end of training | weighted_accuracy   0.9723
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 14,sparsity_level:[2, 3, 4]
+--------->Accuracy reward: 0.8036663797166613,time reward:11.161331818181818
+--------->Reward: 11.96499819789848
+==========================================================================================
+=-=-=-=-=-=>Episode: 14 | Loss: [1.6008443] | LR: (0.99, 15) | Mean R: 11.96499819789848 | Reward: [4.7197255700418905]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 15<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 10.0000%
+nonzero parameters after pruning: 27648 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.0198%
+nonzero parameters after pruning: 9070 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.0000%
+nonzero parameters after pruning: 756 / 840
+
+total pruning rate: 40260 / 44426 (9.3774%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9544%
+nonzero parameters after pruning: 15374 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.8909%
+nonzero parameters after pruning: 5051 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23633 / 44426 (46.8037%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9837%
+nonzero parameters after pruning: 9221 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.6429%
+nonzero parameters after pruning: 3060 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15319 / 44426 (65.5179%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.176411714285713, 18.00892095, 13.486823812499999]
+runs_number: [3788298.0, 5538692.0, 7113135.0]
+====================Results=======================
+--------->Episode: 15,sparsity_level:[0, 2, 3]
+--------->Accuracy reward: -1,time reward:6.427329545454545
+--------->Reward: 5.427329545454545
+==========================================================================================
+=-=-=-=-=-=>Episode: 15 | Loss: [1.6110402] | LR: (0.99, 16) | Mean R: 5.427329545454545 | Reward: [-1.7752829494170888]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 16<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 29.9316%
+nonzero parameters after pruning: 21525 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 30.0397%
+nonzero parameters after pruning: 7052 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31952 / 44426 (28.0782%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9935%
+nonzero parameters after pruning: 15362 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9603%
+nonzero parameters after pruning: 5044 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23614 / 44426 (46.8464%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 70.0293%
+nonzero parameters after pruning: 9207 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.8115%
+nonzero parameters after pruning: 3043 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15290 / 44426 (65.5832%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.023374714285715, 17.9924223, 13.455346125000002]
+runs_number: [4871405.0, 5543771.0, 7129776.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.8267
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.6241
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.4320
+| test before training | weighted_accuracy   0.6870
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 38.82 ms/batch  | loss  0.16
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9821
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9767
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9727
+| end of epoch   1 | time: 45.27s | weighted_accuracy   0.9786
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9821
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9767
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9727
+| end of training | weighted_accuracy   0.9786
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 16,sparsity_level:[1, 2, 3]
+--------->Accuracy reward: 0.8733336130777996,time reward:6.929523636363636
+--------->Reward: 7.802857249441436
+==========================================================================================
+=-=-=-=-=-=>Episode: 16 | Loss: [1.6068182] | LR: (0.99, 17) | Mean R: 7.802857249441436 | Reward: [0.5622954044417732]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 17<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 29.9609%
+nonzero parameters after pruning: 21516 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9603%
+nonzero parameters after pruning: 7060 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31951 / 44426 (28.0804%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 50.0326%
+nonzero parameters after pruning: 15350 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.8909%
+nonzero parameters after pruning: 5051 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23609 / 44426 (46.8577%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 70.0293%
+nonzero parameters after pruning: 9207 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.7817%
+nonzero parameters after pruning: 3046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15293 / 44426 (65.5765%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.02275446428571, 17.98808055, 13.458602437500002]
+runs_number: [4871573.0, 5545109.0, 7128051.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.8231
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.7017
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.3186
+| test before training | weighted_accuracy   0.6858
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 39.05 ms/batch  | loss  0.15
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9790
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9766
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9724
+| end of epoch   1 | time: 45.84s | weighted_accuracy   0.9770
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9790
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9766
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9724
+| end of training | weighted_accuracy   0.9770
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 17,sparsity_level:[1, 2, 3]
+--------->Accuracy reward: 0.855111148622301,time reward:6.929424090909091
+--------->Reward: 7.784535239531392
+==========================================================================================
+=-=-=-=-=-=>Episode: 17 | Loss: [1.5930768] | LR: (0.99, 18) | Mean R: 7.784535239531392 | Reward: [0.510650491991596]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 18<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9902%
+nonzero parameters after pruning: 27651 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.0198%
+nonzero parameters after pruning: 9070 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.0000%
+nonzero parameters after pruning: 756 / 840
+
+total pruning rate: 40263 / 44426 (9.3706%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9837%
+nonzero parameters after pruning: 9221 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.8512%
+nonzero parameters after pruning: 3039 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15300 / 44426 (65.5607%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9707%
+nonzero parameters after pruning: 6153 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.1687%
+nonzero parameters after pruning: 1999 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11107 / 44426 (74.9989%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.178272464285712, 10.772960399999999, 8.9149610625]
+runs_number: [3787994.0, 9258910.0, 10760967.0]
+====================Results=======================
+--------->Episode: 18,sparsity_level:[0, 3, 4]
+--------->Accuracy reward: -1,time reward:9.776304999999999
+--------->Reward: 8.776304999999999
+==========================================================================================
+=-=-=-=-=-=>Episode: 18 | Loss: [1.629821] | LR: (0.99, 19) | Mean R: 8.776304999999999 | Reward: [1.4423047211540672]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 19<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9544%
+nonzero parameters after pruning: 27662 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.0595%
+nonzero parameters after pruning: 9066 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.0000%
+nonzero parameters after pruning: 756 / 840
+
+total pruning rate: 40270 / 44426 (9.3549%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9837%
+nonzero parameters after pruning: 9221 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 70.0595%
+nonzero parameters after pruning: 3018 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15279 / 44426 (65.6080%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9154%
+nonzero parameters after pruning: 6170 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.9405%
+nonzero parameters after pruning: 2022 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.5238%
+nonzero parameters after pruning: 172 / 840
+
+total pruning rate: 11150 / 44426 (74.9021%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.182614214285714, 10.754725050000001, 8.961634874999998]
+runs_number: [3787285.0, 9274609.0, 10704922.0]
+====================Results=======================
+--------->Episode: 19,sparsity_level:[0, 3, 4]
+--------->Accuracy reward: -1,time reward:9.757643636363635
+--------->Reward: 8.757643636363635
+==========================================================================================
+=-=-=-=-=-=>Episode: 19 | Loss: [1.5819607] | LR: (0.99, 20) | Mean R: 8.757643636363635 | Reward: [1.3685054064207574]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 20<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9642%
+nonzero parameters after pruning: 27659 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.0397%
+nonzero parameters after pruning: 9068 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40270 / 44426 (9.3549%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 29.9316%
+nonzero parameters after pruning: 21525 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.7619%
+nonzero parameters after pruning: 7080 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31980 / 44426 (28.0151%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.8991%
+nonzero parameters after pruning: 6175 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 2028 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.5238%
+nonzero parameters after pruning: 172 / 840
+
+total pruning rate: 11161 / 44426 (74.8773%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.182614214285714, 25.2570384, 8.9735746875]
+runs_number: [3787285.0, 3949231.0, 10690679.0]
+====================Results=======================
+--------->Episode: 20,sparsity_level:[0, 1, 4]
+--------->Accuracy reward: -1,time reward:7.330543181818181
+--------->Reward: 6.330543181818181
+==========================================================================================
+=-=-=-=-=-=>Episode: 20 | Loss: [1.562041] | LR: (0.99, 21) | Mean R: 6.330543181818181 | Reward: [-1.042778252016907]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 21<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 49.9219%
+nonzero parameters after pruning: 15384 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9405%
+nonzero parameters after pruning: 5046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23638 / 44426 (46.7924%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.9837%
+nonzero parameters after pruning: 9221 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.8413%
+nonzero parameters after pruning: 3040 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15299 / 44426 (65.5630%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9154%
+nonzero parameters after pruning: 6170 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.8611%
+nonzero parameters after pruning: 2030 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.5238%
+nonzero parameters after pruning: 172 / 840
+
+total pruning rate: 11158 / 44426 (74.8841%)
+-----------------------------------------------------------------------------------------
+latency_list: [12.866616214285713, 10.77209205, 8.970318374999998]
+runs_number: [6823796.0, 9259657.0, 10694559.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.5997
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.2978
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.2935
+| test before training | weighted_accuracy   0.4479
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 39.41 ms/batch  | loss  0.19
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9761
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9715
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9615
+| end of epoch   1 | time: 45.60s | weighted_accuracy   0.9718
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9761
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9715
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9615
+| end of training | weighted_accuracy   0.9718
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 21,sparsity_level:[2, 3, 4]
+--------->Accuracy reward: 0.7977781030866835,time reward:11.12636909090909
+--------->Reward: 11.924147193995774
+==========================================================================================
+=-=-=-=-=-=>Episode: 21 | Loss: [1.6026714] | LR: (0.99, 22) | Mean R: 11.924147193995774 | Reward: [4.4198767886505586]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 22<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9414%
+nonzero parameters after pruning: 27666 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7917%
+nonzero parameters after pruning: 9093 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40299 / 44426 (9.2896%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 50.0260%
+nonzero parameters after pruning: 15352 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.8909%
+nonzero parameters after pruning: 5051 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23611 / 44426 (46.8532%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9577%
+nonzero parameters after pruning: 6157 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.1786%
+nonzero parameters after pruning: 1998 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11110 / 44426 (74.9921%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.20060146428571, 17.98981725, 8.918217375000001]
+runs_number: [3784348.0, 5544574.0, 10757038.0]
+====================Results=======================
+--------->Episode: 22,sparsity_level:[0, 2, 4]
+--------->Accuracy reward: -1,time reward:8.084527272727271
+--------->Reward: 7.0845272727272715
+==========================================================================================
+=-=-=-=-=-=>Episode: 22 | Loss: [1.6149629] | LR: (0.99, 23) | Mean R: 7.0845272727272715 | Reward: [-0.4220978434130034]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 23<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 29.9707%
+nonzero parameters after pruning: 21513 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 30.0000%
+nonzero parameters after pruning: 7056 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31944 / 44426 (28.0962%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9544%
+nonzero parameters after pruning: 15374 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9405%
+nonzero parameters after pruning: 5046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23628 / 44426 (46.8149%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9707%
+nonzero parameters after pruning: 6153 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.9405%
+nonzero parameters after pruning: 2022 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.5238%
+nonzero parameters after pruning: 172 / 840
+
+total pruning rate: 11133 / 44426 (74.9404%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.018412714285713, 18.004579200000002, 8.943182437499999]
+runs_number: [4872747.0, 5540028.0, 10727010.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9049
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.8325
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.2986
+| test before training | weighted_accuracy   0.7619
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 39.57 ms/batch  | loss  0.20
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9713
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9644
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9565
+| end of epoch   1 | time: 45.85s | weighted_accuracy   0.9663
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9713
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9644
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9565
+| end of training | weighted_accuracy   0.9663
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 23,sparsity_level:[1, 2, 4]
+--------->Accuracy reward: 0.736332999335395,time reward:8.563538636363637
+--------->Reward: 9.299871635699033
+==========================================================================================
+=-=-=-=-=-=>Episode: 23 | Loss: [1.5868908] | LR: (0.99, 24) | Mean R: 9.299871635699033 | Reward: [1.7386271365250856]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 24<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 30.0065%
+nonzero parameters after pruning: 21502 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.8710%
+nonzero parameters after pruning: 7069 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31946 / 44426 (28.0917%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9870%
+nonzero parameters after pruning: 15364 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.8909%
+nonzero parameters after pruning: 5051 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23623 / 44426 (46.8262%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.8926%
+nonzero parameters after pruning: 9249 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.7917%
+nonzero parameters after pruning: 3045 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 70.0000%
+nonzero parameters after pruning: 252 / 840
+
+total pruning rate: 15332 / 44426 (65.4887%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.019653214285714, 18.00023745, 13.5009345]
+runs_number: [4872411.0, 5541364.0, 7105701.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.8611
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.5901
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.3194
+| test before training | weighted_accuracy   0.6715
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 38.87 ms/batch  | loss  0.16
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9815
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9768
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9713
+| end of epoch   1 | time: 45.36s | weighted_accuracy   0.9780
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9815
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9768
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9713
+| end of training | weighted_accuracy   0.9780
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 24,sparsity_level:[1, 2, 3]
+--------->Accuracy reward: 0.8672221501668295,time reward:6.917943636363636
+--------->Reward: 7.785165786530465
+==========================================================================================
+=-=-=-=-=-=>Episode: 24 | Loss: [1.5677253] | LR: (0.99, 25) | Mean R: 7.785165786530465 | Reward: [0.20756443240514777]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 25<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 29.9219%
+nonzero parameters after pruning: 21528 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 30.0198%
+nonzero parameters after pruning: 7054 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31957 / 44426 (28.0669%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9740%
+nonzero parameters after pruning: 15368 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9405%
+nonzero parameters after pruning: 5046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.7619%
+nonzero parameters after pruning: 422 / 840
+
+total pruning rate: 23622 / 44426 (46.8284%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9609%
+nonzero parameters after pruning: 6156 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.0595%
+nonzero parameters after pruning: 2010 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.5238%
+nonzero parameters after pruning: 172 / 840
+
+total pruning rate: 11124 / 44426 (74.9606%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.026475964285712, 17.999369100000003, 8.9334135]
+runs_number: [4870567.0, 5541632.0, 10738740.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.8520
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.4820
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.1919
+| test before training | weighted_accuracy   0.6090
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 39.26 ms/batch  | loss  0.21
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9763
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9719
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9623
+| end of epoch   1 | time: 45.27s | weighted_accuracy   0.9722
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9763
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9719
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9623
+| end of training | weighted_accuracy   0.9722
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 25,sparsity_level:[1, 2, 4]
+--------->Accuracy reward: 0.8020000987582737,time reward:8.568608636363637
+--------->Reward: 9.37060873512191
+==========================================================================================
+=-=-=-=-=-=>Episode: 25 | Loss: [1.5964135] | LR: (0.99, 26) | Mean R: 9.37060873512191 | Reward: [1.742837280987163]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 26<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 29.9382%
+nonzero parameters after pruning: 21523 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9107%
+nonzero parameters after pruning: 7065 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31963 / 44426 (28.0534%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.8828%
+nonzero parameters after pruning: 9252 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 70.1885%
+nonzero parameters after pruning: 3005 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15297 / 44426 (65.5675%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9837%
+nonzero parameters after pruning: 6149 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.1687%
+nonzero parameters after pruning: 1999 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11103 / 44426 (75.0079%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.030197464285713, 10.770355349999999, 8.9106193125]
+runs_number: [4869562.0, 9261150.0, 10766211.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.8377
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.3177
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.2889
+| test before training | weighted_accuracy   0.5719
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 39.86 ms/batch  | loss  0.23
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9742
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9606
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9570
+| end of epoch   1 | time: 45.93s | weighted_accuracy   0.9667
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9742
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9606
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9570
+| end of training | weighted_accuracy   0.9667
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 26,sparsity_level:[1, 3, 4]
+--------->Accuracy reward: 0.7408887810177274,time reward:10.271328636363636
+--------->Reward: 11.012217417381363
+==========================================================================================
+=-=-=-=-=-=>Episode: 26 | Loss: [1.5696547] | LR: (0.99, 27) | Mean R: 11.012217417381363 | Reward: [3.30165244466951]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 27<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9642%
+nonzero parameters after pruning: 27659 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7917%
+nonzero parameters after pruning: 9093 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40295 / 44426 (9.2986%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 29.9382%
+nonzero parameters after pruning: 21523 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.8611%
+nonzero parameters after pruning: 7070 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31968 / 44426 (28.0421%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9512%
+nonzero parameters after pruning: 6159 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 80.1488%
+nonzero parameters after pruning: 2001 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11115 / 44426 (74.9809%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.19812046428571, 25.2466182, 8.9236445625]
+runs_number: [3784753.0, 3950861.0, 10750496.0]
+====================Results=======================
+--------->Episode: 27,sparsity_level:[0, 1, 4]
+--------->Accuracy reward: -1,time reward:7.357322727272727
+--------->Reward: 6.357322727272727
+==========================================================================================
+=-=-=-=-=-=>Episode: 27 | Loss: [1.5321877] | LR: (0.99, 28) | Mean R: 6.357322727272727 | Reward: [-1.3358958964601548]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 28<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9740%
+nonzero parameters after pruning: 27656 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7718%
+nonzero parameters after pruning: 9095 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.2381%
+nonzero parameters after pruning: 754 / 840
+
+total pruning rate: 40291 / 44426 (9.3076%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 29.9967%
+nonzero parameters after pruning: 21505 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.9008%
+nonzero parameters after pruning: 7066 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31946 / 44426 (28.0917%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.8926%
+nonzero parameters after pruning: 9249 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.7917%
+nonzero parameters after pruning: 3045 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15334 / 44426 (65.4842%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.195639464285712, 25.227514499999998, 13.503105374999999]
+runs_number: [3785158.0, 3953852.0, 7104558.0]
+====================Results=======================
+--------->Episode: 28,sparsity_level:[0, 1, 3]
+--------->Accuracy reward: -1,time reward:5.701621818181818
+--------->Reward: 4.701621818181818
+==========================================================================================
+=-=-=-=-=-=>Episode: 28 | Loss: [1.6037401] | LR: (0.99, 29) | Mean R: 4.701621818181818 | Reward: [-2.9408980206716357]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 29<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9902%
+nonzero parameters after pruning: 27651 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.7718%
+nonzero parameters after pruning: 9095 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 9.8810%
+nonzero parameters after pruning: 757 / 840
+
+total pruning rate: 40289 / 44426 (9.3121%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 29.9447%
+nonzero parameters after pruning: 21521 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.8214%
+nonzero parameters after pruning: 7074 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31970 / 44426 (28.0376%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 79.9479%
+nonzero parameters after pruning: 6160 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.9206%
+nonzero parameters after pruning: 2024 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 79.8810%
+nonzero parameters after pruning: 169 / 840
+
+total pruning rate: 11139 / 44426 (74.9268%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.19439896428571, 25.2483549, 8.9496950625]
+runs_number: [3785360.0, 3950589.0, 10719204.0]
+====================Results=======================
+--------->Episode: 29,sparsity_level:[0, 1, 4]
+--------->Accuracy reward: -1,time reward:7.343251363636363
+--------->Reward: 6.343251363636363
+==========================================================================================
+--------->mask_dict_set:[{'fc1.weight': [tensor([[1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 0, 0, 1, 1, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 0, 1, 1],
+        [1, 0, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 0, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 0, 1, 1, 0, 0],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 0, 1, 1, 0, 0],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=torch.int32)], 'fc2.weight': [tensor([[1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 1, 1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 0, 1, 1],
+        [1, 0, 1, 1, 0, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [1, 1, 0, 0, 1, 0, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=torch.int32)], 'fc3.weight': [tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 0, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 1, 1, 0]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 0, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 1, 1, 0]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 0, 1, 1],
+        [1, 0, 1, 1, 1, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 0, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 1, 1, 0]], dtype=torch.int32)]}, {'fc1.weight': [tensor([[1, 1, 0, 1, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
+        [1, 1, 1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 0, 1, 0, 0, 1, 1, 1],
+        [1, 1, 0, 0, 1, 1, 0, 1, 0, 1],
+        [1, 1, 1, 0, 1, 0, 0, 1, 1, 0],
+        [1, 0, 0, 1, 1, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 0, 1, 1, 0, 0, 1, 1]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 0, 1, 1, 1, 1],
+        [0, 1, 0, 1, 1, 0, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 1, 0, 0, 1, 0],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 0, 1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 0, 0, 1, 1],
+        [0, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 1, 1, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 0, 1, 0, 0],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 0, 1, 1, 1, 0, 1, 1],
+        [0, 1, 1, 1, 0, 0, 1, 1, 0, 0],
+        [1, 1, 1, 0, 1, 0, 0, 1, 1, 1],
+        [0, 0, 1, 1, 0, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 0, 0, 1, 0, 0, 1],
+        [1, 1, 0, 1, 1, 0, 1, 1, 0, 1]], dtype=torch.int32), tensor([[1, 0, 1, 1, 1, 1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 0, 1, 1],
+        [0, 1, 1, 1, 1, 1, 0, 1, 1, 0],
+        [0, 1, 0, 1, 0, 0, 1, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 0, 1, 1, 0],
+        [1, 1, 1, 1, 0, 0, 1, 0, 0, 1],
+        [1, 1, 0, 0, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 0, 1, 1, 0, 0, 1],
+        [0, 0, 1, 1, 0, 1, 1, 1, 1, 1]], dtype=torch.int32)], 'fc2.weight': [tensor([[1, 1, 1, 1, 0, 1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 0, 1, 0, 1, 1, 0],
+        [1, 1, 0, 1, 1, 0, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 1, 1, 0, 0, 0, 1, 1],
+        [1, 0, 0, 0, 0, 0, 1, 1, 0, 1],
+        [0, 1, 1, 1, 1, 0, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 0, 1, 0, 0, 1, 1, 0],
+        [1, 1, 0, 0, 1, 0, 1, 1, 1, 1]], dtype=torch.int32), tensor([[1, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+        [1, 1, 1, 0, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 0, 1, 0, 1, 1, 0],
+        [0, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 0, 1, 1, 1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0, 0, 1, 0, 0, 1],
+        [0, 0, 1, 0, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 0]], dtype=torch.int32), tensor([[1, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+        [1, 1, 1, 0, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 0, 1, 0, 1, 1, 0],
+        [0, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 0, 1, 1, 1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0, 0, 1, 0, 0, 1],
+        [0, 0, 1, 0, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 0]], dtype=torch.int32), tensor([[1, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+        [1, 1, 1, 0, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 0, 1, 0, 1, 1, 0],
+        [0, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 0, 1, 1, 1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0, 0, 1, 0, 0, 1],
+        [0, 0, 1, 0, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 0]], dtype=torch.int32)], 'fc3.weight': [tensor([[1, 0, 1, 1, 1, 0, 1, 1, 1, 1],
+        [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],
+        [0, 0, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+        [0, 1, 0, 1, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 1, 1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 1, 0, 1, 1, 1, 0, 1],
+        [0, 1, 1, 1, 0, 0, 1, 1, 0, 0]], dtype=torch.int32), tensor([[1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 1, 1, 1, 1, 0, 1, 1],
+        [1, 0, 1, 1, 1, 0, 1, 1, 0, 1],
+        [1, 1, 1, 0, 0, 0, 1, 1, 0, 0],
+        [1, 0, 1, 1, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
+        [0, 0, 1, 1, 1, 0, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 0, 1, 1],
+        [1, 1, 1, 0, 0, 1, 1, 1, 0, 1],
+        [0, 0, 0, 1, 0, 1, 1, 1, 1, 0]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 0, 0, 1, 1, 1],
+        [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [0, 1, 1, 1, 0, 0, 0, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+        [1, 0, 1, 0, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 1, 1, 1, 0, 1, 1, 0],
+        [1, 0, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 1, 1, 0]], dtype=torch.int32), tensor([[1, 1, 1, 1, 1, 0, 0, 1, 1, 1],
+        [1, 0, 0, 1, 0, 0, 0, 1, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+        [0, 1, 1, 1, 0, 0, 0, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+        [1, 0, 1, 0, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 1, 1, 1, 0, 1, 1, 0],
+        [1, 0, 1, 1, 0, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 0, 1, 1, 1, 0]], dtype=torch.int32)]}, {'fc1.weight': [tensor([[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 1, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 1, 0, 1, 1, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], dtype=torch.int32), tensor([[0, 0, 0, 0, 1, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 0, 1, 0, 0, 1],
+        [0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 1, 1, 1],
+        [1, 0, 1, 0, 0, 0, 0, 0, 0, 1]], dtype=torch.int32), tensor([[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 1, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 1, 0, 1, 1, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], dtype=torch.int32), tensor([[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 1, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 1, 0, 1, 1, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], dtype=torch.int32)], 'fc2.weight': [tensor([[0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
+        [0, 1, 1, 0, 1, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 0, 1, 0, 0, 1]], dtype=torch.int32), tensor([[0, 0, 0, 0, 0, 1, 1, 0, 1, 0],
+        [0, 0, 0, 0, 0, 1, 1, 0, 1, 0],
+        [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 0, 0, 1, 0],
+        [0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+        [0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+        [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 1, 0, 0, 0, 0, 0, 0]], dtype=torch.int32), tensor([[0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
+        [0, 1, 1, 0, 1, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 0, 1, 0, 0, 1]], dtype=torch.int32), tensor([[0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+        [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 1, 1, 1],
+        [0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1, 0, 1, 0, 0]], dtype=torch.int32)], 'fc3.weight': [tensor([[0, 0, 0, 0, 1, 0, 0, 1, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 1, 1],
+        [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 1, 0, 1, 0]], dtype=torch.int32), tensor([[0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0, 0, 1],
+        [0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
+        [0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0, 0, 0, 0, 0]], dtype=torch.int32), tensor([[0, 0, 0, 0, 1, 0, 0, 1, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 1, 1],
+        [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 1, 0, 1, 0]], dtype=torch.int32), tensor([[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 1, 0, 0, 1, 1, 0, 0]], dtype=torch.int32)]}]
+=-=-=-=-=-=>Episode: 29 | Loss: [1.5539832] | LR: (0.99, 30) | Mean R: 6.343251363636363 | Reward: [-1.2812931230470719]<=-=-=-=-=
+reward history: [7.064340454545453, 7.0850218181818185, 7.822870770530315, 3.4075872727272722, 6.350381363636363, 5.436403181818181, 7.093279090909091, 6.347145454545454, 7.073675454545453, 4.703176818181817, 11.912155935529459, 8.760918636363636, 11.07492407827281, 8.777263636363635, 11.96499819789848, 5.427329545454545, 7.802857249441436, 7.784535239531392, 8.776304999999999, 8.757643636363635, 6.330543181818181, 11.924147193995774, 7.0845272727272715, 9.299871635699033, 7.785165786530465, 9.37060873512191, 11.012217417381363, 6.357322727272727, 4.701621818181818, 6.343251363636363]
