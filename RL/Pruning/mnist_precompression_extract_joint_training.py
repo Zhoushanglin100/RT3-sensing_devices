@@ -14,8 +14,7 @@ from Pruning.mnist_pattern_pruning_CPU import changed_pattern_pruning
 from Generate_patterns.mnist_extract_info_from_precompression import extract_original_layers_whole_pattern
 import torch.nn as nn
 
-from Transformer_model import TransformerModel
-
+import sys
 
 # #keep batch data
 # def batchify(data,TEXT,device,bsz):
@@ -60,30 +59,53 @@ from Transformer_model import TransformerModel
 
 
 # -------------------------------
-from torchvision.datasets import mnist
+from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 from torchvision.transforms import ToTensor
 from LeNet_5 import Model
 
-batch_size = 256
+# batch_size = 256
+# train_dataset = mnist.MNIST(root='./train', train=True, download=True, transform=ToTensor())
+# test_dataset = mnist.MNIST(root='./test', train=False, download=True, transform=ToTensor())
+# train_loader = DataLoader(train_dataset, batch_size=batch_size)
+# test_loader = DataLoader(test_dataset, batch_size=batch_size)
+
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-train_dataset = mnist.MNIST(root='./train', train=True, download=True, transform=ToTensor())
-test_dataset = mnist.MNIST(root='./test', train=False, download=True, transform=ToTensor())
-train_loader = DataLoader(train_dataset, batch_size=batch_size)
-test_loader = DataLoader(test_dataset, batch_size=batch_size)
+dataset_train = datasets.MNIST('temp_nn/data/mnist/', train=True, download=True,
+                                transform=transforms.Compose([
+                                    transforms.ToTensor(),
+                                    transforms.Normalize((0.1307,), (0.3081,))
+                                ]))
+train_loader = DataLoader(dataset_train, batch_size=64, shuffle=True)
+dataset_test = datasets.MNIST('temp_nn/data/mnist/', train=False, download=True,
+                                transform=transforms.Compose([
+                                    transforms.ToTensor(),
+                                    transforms.Normalize((0.1307,), (0.3081,))
+                                ]))
+test_loader = DataLoader(dataset_test, batch_size=1000, shuffle=False)
+
 
 model = Model()
 model.load_state_dict(torch.load("../LeNet5-MNIST-PyTorch/models/mnist_0.99.pt"))
+model.to(device)
 
 # -------------------------------
 
 def train(model, train_loader, optimizer, criterion, scheduler, epoch, device, mask_dict_set, every_mask_whole_pattern, original_whole_pattern):
+
+    # print("-----------------")
+    # print(mask_dict_set)
+    # print(every_mask_whole_pattern)
+    # print(original_whole_pattern)
+    # print("-----------------")
 
     model.train()
     start_time = time.time()
     total_loss = 0.
 
     for idx, (train_x, train_label) in enumerate(train_loader):
+        train_x, train_label = train_x.to(device), train_label.to(device)
         optimizer.zero_grad()
         average_loss = torch.tensor(0,dtype=torch.float).to(device)
         model_replica = copy.deepcopy(model)            # deepcopy model
@@ -145,15 +167,14 @@ def evaluate(eval_model, test_loader, criterion):
 
     with torch.no_grad():
         for idx, (test_x, test_label) in enumerate(test_loader):
-            predict_y = model(test_x.float()).detach()
-            predict_ys = np.argmax(predict_y, axis=-1)
-            _ = predict_ys == test_label
-            correct += np.sum(_.numpy(), axis=-1)
-            total_loss += criterion(predict_y, test_label.long()).sum().item()
-            _sum += _.shape[0]
+            test_x, test_label = test_x.to(device), test_label.to(device)
+            log_probs = eval_model(test_x)
+            total_loss += criterion(log_probs, test_label).item()
+            y_pred = log_probs.data.max(1, keepdim=True)[1]
+            correct += y_pred.eq(test_label.data.view_as(y_pred)).sum()
 
     # print('accuracy: {:.2f}'.format(correct / _sum))
-    return total_loss / _sum, correct / _sum
+    return total_loss / len(test_loader.dataset), correct / len(test_loader.dataset)
 
 
 #compute weighted accuracy in every epoch at eval_data

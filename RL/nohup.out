@@ -1,17 +1,471 @@
+2021-09-28 15:32:11.460228: I tensorflow/core/platform/cpu_feature_guard.cc:145] This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in non-MKL-DNN operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-28 15:32:11.508679: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2021-09-28 15:32:11.514428: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a4bf5205a0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-28 15:32:11.514509: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-63
+OMP: Info #156: KMP_AFFINITY: 64 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 2 packages x 16 cores/pkg x 2 threads/core (32 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 32 maps to package 0 core 0 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 1 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 33 maps to package 0 core 1 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 34 maps to package 0 core 2 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 3 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 35 maps to package 0 core 3 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 4 maps to package 0 core 4 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 36 maps to package 0 core 4 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 5 maps to package 0 core 5 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 37 maps to package 0 core 5 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 6 maps to package 0 core 6 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 38 maps to package 0 core 6 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 0 core 7 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 39 maps to package 0 core 7 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 8 maps to package 0 core 8 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 40 maps to package 0 core 8 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 9 maps to package 0 core 9 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 41 maps to package 0 core 9 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 10 maps to package 0 core 10 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 42 maps to package 0 core 10 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 11 maps to package 0 core 11 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 43 maps to package 0 core 11 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 12 maps to package 0 core 12 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 44 maps to package 0 core 12 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 13 maps to package 0 core 13 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 45 maps to package 0 core 13 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 14 maps to package 0 core 14 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 46 maps to package 0 core 14 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 15 maps to package 0 core 15 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 47 maps to package 0 core 15 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 16 maps to package 1 core 0 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 48 maps to package 1 core 0 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 17 maps to package 1 core 1 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 49 maps to package 1 core 1 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 18 maps to package 1 core 2 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 50 maps to package 1 core 2 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 19 maps to package 1 core 3 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 51 maps to package 1 core 3 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 20 maps to package 1 core 4 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 52 maps to package 1 core 4 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 21 maps to package 1 core 5 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 53 maps to package 1 core 5 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 22 maps to package 1 core 6 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 54 maps to package 1 core 6 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 23 maps to package 1 core 7 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 55 maps to package 1 core 7 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 24 maps to package 1 core 8 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 56 maps to package 1 core 8 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 25 maps to package 1 core 9 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 57 maps to package 1 core 9 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 26 maps to package 1 core 10 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 58 maps to package 1 core 10 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 27 maps to package 1 core 11 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 59 maps to package 1 core 11 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 28 maps to package 1 core 12 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 60 maps to package 1 core 12 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 29 maps to package 1 core 13 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 61 maps to package 1 core 13 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 30 maps to package 1 core 14 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 62 maps to package 1 core 14 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 31 maps to package 1 core 15 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 63 maps to package 1 core 15 thread 1 
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 51900 thread 0 bound to OS proc set 0
+2021-09-28 15:32:11.522956: I tensorflow/core/common_runtime/process_util.cc:115] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+/home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/torchvision/datasets/mnist.py:498: UserWarning: The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /opt/conda/conda-bld/pytorch_1631630806732/work/torch/csrc/utils/tensor_numpy.cpp:180.)
+  return torch.from_numpy(parsed.astype(m[2], copy=False)).view(*s)
 /home/shz15022/RT3_opensource/RL/utils/load_config_file.py:11: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
   raw_dict = yaml.load(stream)
+/home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor'). (Triggered internally at  /opt/conda/conda-bld/pytorch_1631630806732/work/aten/src/ATen/native/BinaryOps.cpp:467.)
+  return torch.floor_divide(self, other)
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
 #########################################################################################
 A.pattern pruning from precompression model
 B.extract important pattern from precompression model
 C.training(pruning number=[10, 30, 50, 70, 80, 90])
 #########################################################################################
-Traceback (most recent call last):
-  File "mnist_rl_controller.py", line 13, in <module>
-    from mnist_rl_input import controller_params, pruning_number_list, block_size
-  File "/home/shz15022/RT3_opensource/RL/mnist_rl_input.py", line 40, in <module>
-    para_set = extract_generate_rl_input(model_lenet,block_size,prune_ratios,pruning_number_list)
-  File "/home/shz15022/RT3_opensource/RL/mnist_generate_rl_input.py", line 22, in extract_generate_rl_input
-    importance_weight_dict = compute_importance_weight(model, block_size, 5, 8, 5, prune_ratios)
-  File "/home/shz15022/RT3_opensource/RL/Generate_patterns/mnist_extract_info_from_precompression.py", line 46, in compute_importance_weight
-    if prune_ratios[name] == 0.0:
-KeyError: 'fc1.weight'
+2021-09-28 15:32:12,254 tensorflow   WARNING  
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From mnist_rl_controller.py:126: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2021-09-28 15:32:12,982 tensorflow   WARNING  From mnist_rl_controller.py:126: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/contrib/rnn/python/ops/rnn_cell.py:1529: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+2021-09-28 15:32:13,025 tensorflow   WARNING  From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/contrib/rnn/python/ops/rnn_cell.py:1529: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From mnist_rl_controller.py:131: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2021-09-28 15:32:13,066 tensorflow   WARNING  From mnist_rl_controller.py:131: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+WARNING:tensorflow:From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2021-09-28 15:32:13,067 tensorflow   WARNING  From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/python/training/rmsprop.py:119: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2021-09-28 15:32:16,335 tensorflow   WARNING  From /home/shz15022/anaconda3/envs/RT3/lib/python3.6/site-packages/tensorflow_core/python/training/rmsprop.py:119: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52528 thread 1 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52527 thread 2 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52756 thread 3 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52757 thread 4 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52758 thread 5 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52759 thread 6 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52760 thread 7 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52761 thread 8 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52762 thread 9 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52763 thread 10 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52764 thread 11 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52765 thread 12 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52766 thread 13 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52767 thread 14 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52768 thread 15 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52769 thread 16 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52770 thread 17 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52771 thread 18 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52772 thread 19 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52773 thread 20 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52774 thread 21 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52775 thread 22 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52776 thread 23 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52777 thread 24 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52778 thread 25 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52779 thread 26 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52780 thread 27 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52781 thread 28 bound to OS proc set 28
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52782 thread 29 bound to OS proc set 29
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52783 thread 30 bound to OS proc set 30
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52785 thread 32 bound to OS proc set 32
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52784 thread 31 bound to OS proc set 31
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52786 thread 33 bound to OS proc set 33
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52787 thread 34 bound to OS proc set 34
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52788 thread 35 bound to OS proc set 35
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52789 thread 36 bound to OS proc set 36
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52790 thread 37 bound to OS proc set 37
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52791 thread 38 bound to OS proc set 38
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52792 thread 39 bound to OS proc set 39
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52793 thread 40 bound to OS proc set 40
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52794 thread 41 bound to OS proc set 41
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52795 thread 42 bound to OS proc set 42
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52796 thread 43 bound to OS proc set 43
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52797 thread 44 bound to OS proc set 44
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52798 thread 45 bound to OS proc set 45
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52799 thread 46 bound to OS proc set 46
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52800 thread 47 bound to OS proc set 47
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52801 thread 48 bound to OS proc set 48
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52802 thread 49 bound to OS proc set 49
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52803 thread 50 bound to OS proc set 50
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52804 thread 51 bound to OS proc set 51
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52805 thread 52 bound to OS proc set 52
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52806 thread 53 bound to OS proc set 53
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52807 thread 54 bound to OS proc set 54
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52808 thread 55 bound to OS proc set 55
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52809 thread 56 bound to OS proc set 56
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52810 thread 57 bound to OS proc set 57
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52811 thread 58 bound to OS proc set 58
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52812 thread 59 bound to OS proc set 59
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52813 thread 60 bound to OS proc set 60
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52814 thread 61 bound to OS proc set 61
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52815 thread 62 bound to OS proc set 62
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52817 thread 64 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52816 thread 63 bound to OS proc set 63
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52818 thread 65 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52819 thread 66 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52820 thread 67 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52821 thread 68 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52822 thread 69 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52823 thread 70 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52824 thread 71 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52825 thread 72 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52826 thread 73 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52827 thread 74 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52828 thread 75 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52829 thread 76 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52830 thread 77 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52831 thread 78 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52832 thread 79 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52833 thread 80 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52834 thread 81 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52835 thread 82 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52836 thread 83 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52838 thread 85 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52837 thread 84 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52839 thread 86 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52840 thread 87 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52841 thread 88 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52842 thread 89 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52843 thread 90 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52844 thread 91 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52845 thread 92 bound to OS proc set 28
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52846 thread 93 bound to OS proc set 29
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52847 thread 94 bound to OS proc set 30
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52848 thread 95 bound to OS proc set 31
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52849 thread 96 bound to OS proc set 32
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52850 thread 97 bound to OS proc set 33
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52851 thread 98 bound to OS proc set 34
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52852 thread 99 bound to OS proc set 35
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52853 thread 100 bound to OS proc set 36
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52854 thread 101 bound to OS proc set 37
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52855 thread 102 bound to OS proc set 38
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52856 thread 103 bound to OS proc set 39
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52857 thread 104 bound to OS proc set 40
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52858 thread 105 bound to OS proc set 41
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52859 thread 106 bound to OS proc set 42
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52860 thread 107 bound to OS proc set 43
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52861 thread 108 bound to OS proc set 44
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52862 thread 109 bound to OS proc set 45
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52863 thread 110 bound to OS proc set 46
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52864 thread 111 bound to OS proc set 47
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52865 thread 112 bound to OS proc set 48
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52866 thread 113 bound to OS proc set 49
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52867 thread 114 bound to OS proc set 50
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52869 thread 116 bound to OS proc set 52
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52870 thread 117 bound to OS proc set 53
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52871 thread 118 bound to OS proc set 54
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52872 thread 119 bound to OS proc set 55
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52873 thread 120 bound to OS proc set 56
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52874 thread 121 bound to OS proc set 57
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52876 thread 123 bound to OS proc set 59
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52875 thread 122 bound to OS proc set 58
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52868 thread 115 bound to OS proc set 51
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52877 thread 124 bound to OS proc set 60
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52878 thread 125 bound to OS proc set 61
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52879 thread 126 bound to OS proc set 62
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52880 thread 127 bound to OS proc set 63
+OMP: Info #250: KMP_AFFINITY: pid 51900 tid 52881 thread 128 bound to OS proc set 0
+[at weight fc1.weight]
+percentage of pruned: 0.0000%
+nonzero parameters after pruning: 30720 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 0.0000%
+nonzero parameters after pruning: 10080 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 0.0000%
+nonzero parameters after pruning: 840 / 840
+
+total pruning rate: 44426 / 44426 (0.0000%)
+-----------------------------------------------------------------------------------------
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 0<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 30.0879%
+nonzero parameters after pruning: 21477 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.7321%
+nonzero parameters after pruning: 7083 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31935 / 44426 (28.1164%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9870%
+nonzero parameters after pruning: 15364 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9603%
+nonzero parameters after pruning: 5044 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.5238%
+nonzero parameters after pruning: 424 / 840
+
+total pruning rate: 23618 / 44426 (46.8374%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.8503%
+nonzero parameters after pruning: 9262 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.7222%
+nonzero parameters after pruning: 3052 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.8810%
+nonzero parameters after pruning: 253 / 840
+
+total pruning rate: 15353 / 44426 (65.4414%)
+-----------------------------------------------------------------------------------------
+latency_list: [18.012830464285713, 17.9958957, 13.5237286875]
+runs_number: [4874257.0, 5542701.0, 7093724.0]
+-----------------------------------------------------------------------------------------
+| original model evaluate | loss  0.00 | accuracy   0.9865
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9368
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.6584
+| test_data evaluate | sub loss  0.01 | sub accuracy   0.4019
+| test before training | weighted_accuracy   0.7463
+-----------------------------------------------------------------------------------------
+| epoch   1 |   900/  938 batches | lr 0.23 | 19.27 ms/batch  | loss  0.16
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9794
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9791
+| end of epoch   1 | sub loss  0.00 | sub accuracy   0.9669
+| end of epoch   1 | time: 22.02s | weighted_accuracy   0.9768
+-----------------------------------------------------------------------------------------
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9794
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9791
+| test_data evaluate | sub loss  0.00 | sub accuracy   0.9669
+| end of training | weighted_accuracy   0.9768
+-----------------------------------------------------------------------------------------
+====================Results=======================
+--------->Episode: 0,sparsity_level:[1, 2, 3]
+--------->Accuracy reward: 0.8534442053900825,time reward:6.913946363636363
+--------->Reward: 7.767390569026445
+==========================================================================================
+=-=-=-=-=-=>Episode: 0 | Loss: [1.6141039] | LR: (0.99, 1) | Mean R: 7.767390569026445 | Reward: [0.0]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 1<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 9.9609%
+nonzero parameters after pruning: 27660 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 9.9306%
+nonzero parameters after pruning: 9079 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.0000%
+nonzero parameters after pruning: 756 / 840
+
+total pruning rate: 40281 / 44426 (9.3301%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 50.0065%
+nonzero parameters after pruning: 15358 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.9405%
+nonzero parameters after pruning: 5046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.8810%
+nonzero parameters after pruning: 421 / 840
+
+total pruning rate: 23611 / 44426 (46.8532%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 80.0521%
+nonzero parameters after pruning: 6128 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 79.7024%
+nonzero parameters after pruning: 2046 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 80.1190%
+nonzero parameters after pruning: 167 / 840
+
+total pruning rate: 11127 / 44426 (74.9539%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.18943696428571, 17.98981725, 8.9366698125]
+runs_number: [3786170.0, 5544574.0, 10734827.0]
+====================Results=======================
+--------->Episode: 1,sparsity_level:[0, 2, 4]
+--------->Accuracy reward: -1,time reward:8.075259545454545
+--------->Reward: 7.075259545454545
+==========================================================================================
+=-=-=-=-=-=>Episode: 1 | Loss: [1.6152577] | LR: (0.99, 2) | Mean R: 7.075259545454545 | Reward: [-0.5059883223182045]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 2<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 10.0651%
+nonzero parameters after pruning: 27628 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 10.1488%
+nonzero parameters after pruning: 9057 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 10.0000%
+nonzero parameters after pruning: 756 / 840
+
+total pruning rate: 40227 / 44426 (9.4517%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9870%
+nonzero parameters after pruning: 15364 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.8313%
+nonzero parameters after pruning: 5057 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 49.5238%
+nonzero parameters after pruning: 424 / 840
+
+total pruning rate: 23631 / 44426 (46.8082%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 69.8535%
+nonzero parameters after pruning: 9261 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 69.6429%
+nonzero parameters after pruning: 3060 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 69.7619%
+nonzero parameters after pruning: 254 / 840
+
+total pruning rate: 15361 / 44426 (65.4234%)
+-----------------------------------------------------------------------------------------
+latency_list: [23.155943464285713, 18.00718425, 13.5324121875]
+runs_number: [3791647.0, 5539226.0, 7089172.0]
+====================Results=======================
+--------->Episode: 2,sparsity_level:[0, 2, 3]
+--------->Accuracy reward: -1,time reward:6.418202272727273
+--------->Reward: 5.418202272727273
+==========================================================================================
+=-=-=-=-=-=>Episode: 2 | Loss: [1.6178353] | LR: (0.99, 3) | Mean R: 5.418202272727273 | Reward: [-1.698858983554703]<=-=-=-=-=
+=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=>Episode 3<=-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-=
+[at weight fc1.weight]
+percentage of pruned: 30.0651%
+nonzero parameters after pruning: 21484 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 29.7222%
+nonzero parameters after pruning: 7084 / 10080
+
+[at weight fc3.weight]
+percentage of pruned: 29.8810%
+nonzero parameters after pruning: 589 / 840
+
+total pruning rate: 31943 / 44426 (28.0984%)
+-----------------------------------------------------------------------------------------
+[at weight fc1.weight]
+percentage of pruned: 49.9870%
+nonzero parameters after pruning: 15364 / 30720
+
+[at weight fc2.weight]
+percentage of pruned: 49.8115%

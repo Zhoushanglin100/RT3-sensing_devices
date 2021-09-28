@@ -2,12 +2,12 @@
     This file is for the latency and number of runs computation.
 '''
 
-# from Pruning.precompression_extract_joint_training import model
+from Pruning.mnist_precompression_extract_joint_training import model
 
-import torch
-from LeNet_5 import Model
-model = Model()
-model.load_state_dict(torch.load("../LeNet5-MNIST-PyTorch/models/mnist_0.99.pt"))
+# import torch
+# from LeNet_5 import Model
+# model = Model()
+# model.load_state_dict(torch.load("../LeNet5-MNIST-PyTorch/models/mnist_0.99.pt"))
 
 # ---------------
 
@@ -19,7 +19,7 @@ def all_multiply_operation_times():
         #         or ('linear1.weight' in name) or ('linear2.weight' in name) \
         #         or ('encoder.weight' in name) or ('decoder.weight' in name):
         if ("fc" in name) and ("weight" in name):
-            print("all_multiply_operation_times", name)
+            # print("all_multiply_operation_times", name)
             multiply_operation_dict[name] = int(weight.shape[0] * weight.shape[1])
     return multiply_operation_dict
 
@@ -35,7 +35,7 @@ def all_add_operation_times():
         #     pixels = weight.shape[0] * weight.shape[1]
         #     add_operation_dict[name] = int(pixels - weight.shape[0])
         if ('fc' in name) and ('weight' in name):
-            print("all_add_operation_times", name)
+            # print("all_add_operation_times", name)
             pixels = weight.shape[0] * weight.shape[1]
             add_operation_dict[name] = int(pixels - weight.shape[0])
     return add_operation_dict

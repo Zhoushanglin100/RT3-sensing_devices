@@ -289,7 +289,6 @@ class Controller(object):
                 str_NN2 = " ".join(str(x) for x in Para_level)
                 str_NNs = str_NN1 + " " + str_NN2
 
-
                 # logger.info("--------->NN: {}".format(str_NNs))
                 # print("--------->NN: {}".format(str_NNs))
 

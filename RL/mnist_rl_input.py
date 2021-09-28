@@ -10,7 +10,7 @@
 
 import torch
 from mnist_generate_rl_input import random_generate_rl_input, extract_generate_rl_input
-# from Pruning.precompression_extract_joint_training import model
+from Pruning.mnist_precompression_extract_joint_training import model
 from utils.load_config_file import load_config_file
 
 block_size = 10
@@ -28,16 +28,8 @@ if ours:#True
 
     config_file = './config_file/mnist_prune_ratio.yaml'
     prune_ratios = load_config_file(config_file)
-    
-    # ---------------
-    # model.load_state_dict(torch.load('./model/model_after_BP.pt'))
-
-    from LeNet_5 import Model
-    model_lenet = Model()
-    model_lenet.load_state_dict(torch.load("../LeNet5-MNIST-PyTorch/models/mnist_0.99.pt"))
-    # ---------------
-
-    para_set = extract_generate_rl_input(model_lenet,block_size,prune_ratios,pruning_number_list)
+    model.load_state_dict(torch.load("../LeNet5-MNIST-PyTorch/models/mnist_0.99.pt"))
+    para_set = extract_generate_rl_input(model,block_size,prune_ratios,pruning_number_list)
 
 # else:
 #     if random_pattern:#False True
@@ -65,7 +57,7 @@ if ours:#True
 
 
 controller_params = {
-    "model": model_lenet,
+    "model": model,
     "sw_space":(para_set),
     "level_space":([[[0, 1, 2], [0, 1, 3], [0, 1, 4], 
                      [0, 2, 3], [0, 2, 4], 

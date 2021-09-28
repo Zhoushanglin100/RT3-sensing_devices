@@ -4,7 +4,7 @@
 
 import copy
 
-from Pruning.pattern_pruning_CPU import changed_pattern_pruning
+from Pruning.mnist_pattern_pruning_CPU import changed_pattern_pruning
 
 
 def sparsity_ratio(model,print_enable):
