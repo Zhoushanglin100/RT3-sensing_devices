@@ -1,0 +1,15 @@
+RL/__pycache__/
+RL/Generate_patterns/__pycache__/
+RL/Pruning/__pycache__/
+RL/utils/__pycache__/
+LeNet5-MNIST-PyTorch/__pycache__/
+LeNet5-MNIST-PyTorch/models/
+LeNet5-MNIST-PyTorch/train/
+LeNet5-MNIST-PyTorch/test/
+
+RL/.data/
+RL/train/
+RL/test/
+RL/model/
+
+RL/check.ipynb

@@ -1,0 +1,17 @@
+/home/shz15022/RT3_opensource/RL/utils/load_config_file.py:11: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  raw_dict = yaml.load(stream)
+#########################################################################################
+A.pattern pruning from precompression model
+B.extract important pattern from precompression model
+C.training(pruning number=[10, 30, 50, 70, 80, 90])
+#########################################################################################
+Traceback (most recent call last):
+  File "mnist_rl_controller.py", line 13, in <module>
+    from mnist_rl_input import controller_params, pruning_number_list, block_size
+  File "/home/shz15022/RT3_opensource/RL/mnist_rl_input.py", line 40, in <module>
+    para_set = extract_generate_rl_input(model_lenet,block_size,prune_ratios,pruning_number_list)
+  File "/home/shz15022/RT3_opensource/RL/mnist_generate_rl_input.py", line 22, in extract_generate_rl_input
+    importance_weight_dict = compute_importance_weight(model, block_size, 5, 8, 5, prune_ratios)
+  File "/home/shz15022/RT3_opensource/RL/Generate_patterns/mnist_extract_info_from_precompression.py", line 46, in compute_importance_weight
+    if prune_ratios[name] == 0.0:
+KeyError: 'fc1.weight'

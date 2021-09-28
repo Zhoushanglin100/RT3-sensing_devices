@@ -1,0 +1,11 @@
+prune_ratios:
+    # conv1.weight:
+    #     0.7
+    # conv2.weight:
+    #     0.7
+    fc1.weight:
+        0.7
+    fc2.weight:
+        0.7
+    fc3.weight:
+        0.7
